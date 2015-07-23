@@ -1,0 +1,19 @@
+{
+  "name": "pririt-printer",
+  "version": "0.1.0",
+  "description": "Pirit Printer COM Node.js API",
+  "dependencies": {
+    "node-cp866buffer": "*",
+    "serialport": "^1.7.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pirit",
+    "printer"
+  ],
+  "author": "Constantin Tsukanov",
+  "license": "MIT"
+}
