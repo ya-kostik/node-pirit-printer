@@ -11,8 +11,6 @@ For connection to working horses it use COM Port or USB Type A (USB use virtual 
 
 ## Install
 
-Just copy this repo to your project directory and require like Node.JS module
-
 ```
 $ npm i node-pririt-printer --save
 ```
