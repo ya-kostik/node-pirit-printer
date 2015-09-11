@@ -14,7 +14,7 @@ For connection to working horses it use COM Port or USB Type A (USB use virtual 
 Just copy this repo to your project directory and require like Node.JS module
 
 ```
-$ git clone https://nekogda@bitbucket.org/nekogda/pirit-printer.git
+$ npm i node-pririt-printer --save
 ```
 
 

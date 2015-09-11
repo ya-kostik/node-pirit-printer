@@ -195,5 +195,29 @@ Pirit.prototype.setLineSpacing = function(height) {
   return this.writeHex([0x33, height]);
 };
 
+/**
+ * Set indent
+ * @param nL
+ * @param nH
+ * @returns {Pirit}
+ */
+Pirit.prototype.setIndent = function(nL, nH) {
+    return this.writeHex([0x1B, 0x5C, parseInt(nL), parseInt(nH)]);
+}
+
+Pirit.prototype.ALIGN_LEFT = 0.48;
+Pirit.prototype.ALIGN_CENTER = 2.50;
+Pirit.prototype.ALIGN_RIGHT = 1.49;
+
+/**
+ * Set align by one of the this types Pirit.prototype.ALIGN_LEFT, Pirit.prototype.ALIGN_RIGHT, Pirit.prototype.ALIGN_CENTER
+ * @param [type]
+ * @returns {Pirit}
+ */
+Pirit.prototype.align = function(type) {
+    type = type || 0;
+    return this.writeHex([0x1B, 0x61, type]);
+}
+
 
 module.exports = Pirit;
