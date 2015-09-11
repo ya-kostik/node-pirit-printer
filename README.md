@@ -10,7 +10,7 @@ For connection to working horses it use COM Port or USB Type A (USB use virtual 
 ## Install
 
 ```
-$ npm i node-pririt-printer --save
+$ npm i node-pirit-printer --save
 ```
 
 
