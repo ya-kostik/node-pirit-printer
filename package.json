@@ -1,5 +1,5 @@
 {
-  "name": "pririt-printer",
+  "name": "node-pririt-printer",
   "version": "0.1.0",
   "description": "Pirit Printer COM Node.js API",
   "dependencies": {
@@ -12,8 +12,14 @@
   },
   "keywords": [
     "pirit",
-    "printer"
+    "printer",
+    "node",
+    "api"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ya-kostik/node-pirit-printer"
+  },
   "author": "Constantin Tsukanov",
   "license": "MIT"
 }
