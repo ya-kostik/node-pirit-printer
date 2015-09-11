@@ -1,4 +1,4 @@
-#Pirit Printer Node.js API
+# Pirit Printer Node.js API
 Node.JS API for Pirit printers
 
 
