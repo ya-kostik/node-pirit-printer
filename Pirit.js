@@ -35,8 +35,6 @@ Pirit.prototype.send = function(cb) {
   var self = this;
   this.port.write(buffer, function (err, data) {
     if (err) return cb(err);
-    //TODO: remove all logs
-    console.log(data);
     cb(null, self);
   });
 };
@@ -129,19 +127,21 @@ Pirit.prototype.clean = function() {
 
 /**
  * Add roll row command to buffer (0x14)
- * @param count Count of rows
+ * @param [count] Count of rows
  * @returns {Pirit}
  */
 Pirit.prototype.rollRow = function(count) {
+  count = count || 1;
   return this.writeHex([0x14, parseInt(count)]);
 };
 
 /**
  * Add roll line command to buffer (0x15)
- * @param count Count of lines
+ * @param [count] Count of lines
  * @returns {Pirit}
  */
 Pirit.prototype.rollLine = function(count) {
+  count = count || 1;
   return this.writeHex([0x15, parseInt(count)]);
 };
 
@@ -151,7 +151,14 @@ Pirit.prototype.rollLine = function(count) {
  */
 Pirit.prototype.slice = function() {
   return this.write("\u0019");
-  //return this.writeHex([0x1B, 0x69]);
+};
+
+/**
+ * Combine save slice command and add it to buffer of commands
+ * @returns {Pirit}
+ */
+Pirit.prototype.safeSlice = function() {
+  return this.rollRow(8).slice();
 };
 
 /**
@@ -160,13 +167,33 @@ Pirit.prototype.slice = function() {
  */
 Pirit.prototype.partialSlice = function() {
   return this.write("\u001A");
-  //return this.writeHex([0x1B, 0x6D]);
+};
+
+/**
+ * Combine save partial slice command and add it to buffer of commands
+ * @returns {Pirit}
+ */
+Pirit.prototype.safePartialSlice = function() {
+  return this.rollRow(8).partialSlice();
+};
+
+/**
+ * Add to buffer Alarm command
+ * @returns {Pirit}
+ */
+Pirit.prototype.signal = function() {
+  return this.writeHex([0x1B, 0x07]);
+};
+
+/**
+ * Set line spacing as height
+ * @param [height]
+ * @returns {Pirit}
+ */
+Pirit.prototype.setLineSpacing = function(height) {
+  height = height || 1;
+  return this.writeHex([0x33, height]);
 };
 
 
 module.exports = Pirit;
-
-
-
-
-
