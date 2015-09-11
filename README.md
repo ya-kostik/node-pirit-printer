@@ -1,4 +1,6 @@
-#Pirit
+#Pirit Printer Node.js API
+Node.JS API for Pirit printers
+
 
 ## Overview
 
@@ -37,8 +39,7 @@ if (err) return console.error(err);
     .writeLine("Потом опять что-то печатать")
     .writeLine("Потом опять что-то печатать")
     .writeLine("Потом опять что-то печатать")
-    .rollRow(8)
-    .slice()
+    .safeSlice()
     //When we done with commands, we can use send, sendAndClean or sendAndClose to send buffer to Pirit Printer
     .sendAndClose();
 });
@@ -49,6 +50,6 @@ When you call connect function, it trying find Pirit Printer as COM device. When
 After all you can use Pirit API
 
 
-## Methods
+## TODO Methods
 
-To see methods documentation see [Methods page](https://bitbucket.org/nekogda/pirit-printer/wiki/Methods) or use ”jsdoc“ 3 generator.
+To see methods documentation use ”jsdoc“ generator.
