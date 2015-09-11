@@ -1,6 +1,4 @@
 # Pirit Printer Node.js API
-Node.JS API for Pirit printers
-
 
 ## Overview
 
@@ -19,8 +17,7 @@ $ npm i node-pririt-printer --save
 ## Using
 
 ```
-#!JavaScript
-var connect = require('pirit').connect;
+var connect = require('node-pririt-printer').connect;
 
 connect(function(err, pirit) {
 if (err) return console.error(err);
