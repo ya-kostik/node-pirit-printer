@@ -1,5 +1,5 @@
 {
-  "name": "node-pririt-printer",
+  "name": "node-pirit-printer",
   "version": "0.1.4",
   "description": "Pirit Printer COM Node.js API",
   "dependencies": {
