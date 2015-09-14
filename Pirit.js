@@ -206,8 +206,8 @@ Pirit.prototype.setIndent = function(nL, nH) {
 }
 
 Pirit.prototype.ALIGN_LEFT = 0.48;
-Pirit.prototype.ALIGN_CENTER = 2.50;
-Pirit.prototype.ALIGN_RIGHT = 1.49;
+Pirit.prototype.ALIGN_RIGHT = 2.50;
+Pirit.prototype.ALIGN_CENTER = 1.49;
 
 /**
  * Set align by one of the this types Pirit.prototype.ALIGN_LEFT, Pirit.prototype.ALIGN_RIGHT, Pirit.prototype.ALIGN_CENTER
@@ -217,7 +217,28 @@ Pirit.prototype.ALIGN_RIGHT = 1.49;
 Pirit.prototype.align = function(type) {
     type = type || 0;
     return this.writeHex([0x1B, 0x61, type]);
-}
+};
 
+Pirit.prototype.drawLine = function(symbol) {
+  var line = '';
+  while(line.length < 44) {
+    line += symbol;
+  }
+  this.align(this.ALIGN_CENTER);
+  return this.writeLine(line);
+};
+
+Pirit.prototype.writeSepLine = function(a, b, symbol){
+  a = a.toString();
+  b = b.toString();
+  var line = a;
+  while(line.length < 44 - b.length) {
+    line += symbol;
+  }
+  line += b;
+  this.align(this.ALIGN_CENTER);
+  return this.writeLine(line);
+
+};
 
 module.exports = Pirit;
