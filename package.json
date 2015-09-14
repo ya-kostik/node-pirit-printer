@@ -1,6 +1,6 @@
 {
   "name": "node-pirit-printer",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Pirit Printer COM Node.js API",
   "dependencies": {
     "node-cp866buffer": "*",
